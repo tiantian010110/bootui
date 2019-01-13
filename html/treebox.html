@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>index</title>
+        <script type="text/javascript" src="../js/load.js"></script>
+    </head>
+    <body>
+        <div id="a" textField="text" class="boot-combobox" asTree="true" url="tree.json" style="margin-left: 10px;"></div>
+        <div id="b" textField="text" class="boot-combobox" asTree="true" onlyLeaf="true" url="tree.json" value="10" style="margin-left: 10px;"></div>
+        <input onclick="setParameters()" type="button" value="setParameters"/>
+        <div id="tbox" textField="text" class="boot-combobox" asTree="true" onlyLeaf="true" showCheckBox="true" url="tree.json" value="10,11" style="margin-left: 10px;"></div>
+    </body>
+    <script type="text/javascript">
+    	function setParameters(){
+    		boot.get("tbox")._setParameters({"prodID": "fdjkg134gkjhfsdkljrfthqiufgi9uh432"});
+    	}
+    </script>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>index</title>
+        <script type="text/javascript" src="../js/load.js"></script>
+        <script type="text/javascript">
+            var data = [{'id': 1, 'name': '在职'}, {'id': 0, 'name': '离职'}];
+        </script>
+    </head>
+    <body>
+        <div class="boot-toolbar" id="toolbar">
+            <a class="boot-button" onclick="alert(JSON.stringify(boot.get('dataform').getData()));">获取数据</a>
+            <a class="boot-button" onclick="setData">设置form数据</a>
+            <a class="boot-button" iconCls="add">设置form数据</a>
+        </div>
+        <div id="dataform" 
+        binding="grid"
+        class="boot-dataform">
+            <table>
+                <tr>
+                    <td>
+                        textbox:<input id="bb" name="name" value="12345678900" width="500" required="true" onlyView="true" class="boot-textbox"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        password:<input id="ff" name="password" onchange="test" value="12345678900" onlyView="true" class="boot-password"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        password:<input id="oo" name="password1" value="12345678900" class="boot-password" onlyView="true" enabled="false"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        date:<input id="kk" name="birthday" value="1988-07-15" class="boot-date" onlyView="true" format="yyyy-mm-dd hh:mi" readonly="true"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        decimal(number):<input id="ll" name="age" maxValue="100" value="123456.12345" onlyView="true" format="c4" class="boot-number"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        percentage(number):<input id="mm" name="test" maxValue="1" value="123456.12345" onlyView="true" format="p4" class="boot-number"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        combobox:<input id="cc" name="sex" value="2" textField="name" onlyView="true" valueField="id" url="../html/combo.json" class="boot-combobox"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        autocomplete:<input id="hh" name="idCard" url="../html/combo.json" onlyView="true" class="boot-autocomplete"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        checkbox:<div id="ee" columnSize="2" name="type" showBorder="false" onlyView="true" textField="name" valueField="id" value="jp" url="../html/checkbox.json" class="boot-checkbox"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        radiobox:<div id="gg" columnSize="2" name="nationality" textField="name" onlyView="true" valueField="id" value="jp" url="../html/checkbox.json" class="boot-radiobox"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        popupwindow:<input id="nn" name="department1" class="boot-popupwindow" onlyView="true" url="http://www.baidu.com"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        popupedit:<input id="aa" name="department" text="住建部" value="住建部" onlyView="true" class="boot-popupedit"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        textarea:<input id="dd" name="remark" value="fuck 住建部" onlyView="true" class="boot-textarea"/>
+                    </td>
+                </tr>
+            </table>
+        </div>  
+        <div id="grid" 
+            class="boot-datagrid" 
+            height="400" 
+            autoLoad="false"
+            showIndex="true" 
+            cacheRow="true"
+            showSelectBox="true" 
+            allowCellEdit="true"
+            url="grid.json">
+            <div field="name" locked="true" editor="{type: 'textbox'}">姓名</div>
+            <div field="sex">性别</div>
+            <div field="status" width="150" editor="{'type': 'combobox', 'data': data}">状态</div>
+            <div field="code" width="150" editor="{'type': 'popupedit', 'url': data}">身份证号</div>
+            <div field="phone" width="150">手机号</div>
+            <div field="birthday" width="150">生日</div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        boot.parse();
+        function setData() {
+            var o = {
+                name : 'xltian010110',
+                password : '010110',
+                sex : 1,
+                nationality : "cn",
+                department : 'BI商业智能',
+                remark : "I love BI商业智能!"
+            };
+            boot.get('dataform').setData(o);
+        }
+        boot.get('dataform').query({url: "../html/form.json"});
+        boot.get('dataform').bind('loadsuccess', function(e){
+            console.log(e.result, e.sender)
+        });
+        boot.get('ff').bind('change', function(e){
+            console.log(e, 1)
+        });
+        function test(e){
+            console.log(e, 2)
+        };
+    </script>
+</html>

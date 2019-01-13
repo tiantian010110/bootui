@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>index</title>
+        <link href="../css/boot.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="../js/root/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/root/boot.js"></script>
+        <script type="text/javascript" src="../js/plugin/boot.validate.js"></script>
+        <script type="text/javascript" src="../js/plugin/boot.textbox.js"></script>
+        <script type="text/javascript" src="../js/plugin/boot.popupedit.js"></script>
+        <script type="text/javascript" src="../js/plugin/boot.combobox.js"></script>
+        <script type="text/javascript" src="../js/plugin/boot.listbox.js"></script>
+        <script type="text/javascript" src="../js/plugin/boot.checkbox.js"></script>
+        <script type="text/javascript" src="../js/plugin/boot.radiobox.js"></script>
+    </head>
+    <body>
+        <div class="boot-combobox" url="combo.json" style="margin-left: 10px;"></div>
+        <div class="boot-listbox" url="combo.json" style="width: 100px;height: 50px;"></div>
+        <div id="ee" name="type" columnSize="2" value="jp" url="../html/checkbox.json" class="boot-checkbox"></div>
+        <div id="ff" name="type1" columnSize="2" value="jp" data="[
+    { 'id': 'usa', 'name': '美国' },
+    { 'id': 'jp', 'name': '日本' },
+    { 'id': 'en', 'name': '英国' },
+    { 'id': 'de', 'name': '德国' },
+    { 'id': 'fr', 'name': '法国' },
+    { 'id': 'ca', 'name': '加拿大' },
+    { 'id': 'at', 'name': '奥地利' },
+    { 'id': 'cn', 'name': '中国' },
+    { 'id': 'ch', 'name': '瑞士' }
+]" class="boot-radiobox"></div>
+
+    </body>
+    
+    <script type="text/javascript">
+    boot.parse();
+        boot.get('ee').bind('itemclick', function(e){alert('我是itemclick,我接受了参数: ' + e)});
+    </script>
+</html>

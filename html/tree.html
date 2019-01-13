@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+		<title>tree</title>
+        <script type="text/javascript" src="../js/load.js"></script>
+        <script type="text/javascript">
+            var data = [{'id': 1, 'name': '在职'}, {'id': 0, 'name': '离职'}];
+        </script>
+	</head>
+
+	<body>
+        <div id="tree1" 
+            class="boot-tree" 
+            url="tree.json" 
+            showHead="true" 
+            showClose="false"
+            showCheckbox="true"
+            showTools="true"
+            loadType="lazy"
+            title="tree"
+            binding="grid"
+            style="width: 100%;height: 300px;"
+        > </div>
+        <button onclick="reload()">reload</button>
+        <button onclick="addNode()">addNode</button>
+        <button onclick="updateNode()">updateNode</button>
+        <button onclick="getCheckedNodes()">getCheckedNodes</button>
+        <button onclick="getChangedNodes()">getChangedNodes</button>
+        <script type="text/javascript">
+            boot.parse();
+            var tree = boot.get('tree1');
+            function reload(){tree.reload();}
+            function updateNode(){
+                var record = {
+                "id": "10",
+                "text": "甜田2",
+                "sex": "男",
+                "age": 26,
+                "status": 1,
+                "birthday": "1988-06-17",
+                "code": "121212121212121212",
+                "phone": "18600678617"
+            };
+                var parent = tree.getSelectedNode();
+                tree._updateNode(parent, record);
+            }
+            function addNode(){
+                var rows = [ {
+                "id": "8",
+                "text": "甜田1",
+                "status": 1,
+                "sex": "男",
+                "age": 26,
+                "birthday": "1988-06-17",
+                "code": "121212121212121212",
+                "phone": "18600678617"
+            }, {
+                "id": "10",
+                "text": "甜田2",
+                "sex": "男",
+                "age": 26,
+                "status": 1,
+                "birthday": "1988-06-17",
+                "code": "121212121212121212",
+                "phone": "18600678617"
+            }];
+                var parent = tree.getSelectedNode();
+                tree.addNodes(rows, parent);
+            }
+            function getCheckedNodes(){
+                var nodes = tree.getCheckedNodes();
+                console.log(nodes);
+                alert(nodes.length);
+            }
+            function getChangedNodes(){
+                var nodes = tree.getChangedNodes();
+                console.log(nodes);
+                alert(nodes.length);
+            }
+        </script>
+	</body>
+</html>

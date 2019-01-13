@@ -1,0 +1,22 @@
+{
+	"success": true,
+	"resultData": [
+			{ "id":1, "parentid":0, "name":"文件夹", "open": true, "children": [
+				{ "id":11, "parentid":1, "name":"收件箱", "children": [
+			
+					{ "id":111, "parentid":11, "name":"收件箱1"},
+					{ "id":112, "parentid":111, "name":"收件箱2"},
+					{ "id":113, "parentid":112, "name":"收件箱3"},
+					{ "id":114, "parentid":113, "name":"收件箱4"}
+				]},
+				{ "id":12, "parentid":1, "name":"垃圾邮件"},
+				{ "id":13, "parentid":1, "name":"草稿"},
+				{ "id":14, "parentid":1, "name":"已发送邮件"},
+				{ "id":15, "parentid":1, "name":"已删除邮件"}
+			]},
+			{ "id":3, "parentid":0, "name":"快速视图", "children": [
+				{ "id":31, "parentid":3, "name":"文档"},
+				{ "id":32, "parentid":3, "name":"照片"}
+			]}
+		]
+}

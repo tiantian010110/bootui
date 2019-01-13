@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+		<title>tree</title>
+        <script type="text/javascript" src="../js/load.js"></script>
+        <script type="text/javascript">
+            var data = [{'id': 1, 'name': '在职'}, {'id': 0, 'name': '离职'}];
+        </script>
+	</head>
+
+	<body>
+        <div id="grid" 
+        class="boot-datagrid" 
+        height="400" 
+        showIndex="true" 
+        showPager="false">
+            <div field="proID">项目名称</div>
+            <div field="phone" width="50" render="renderChcekbox">选择</div>
+            <div field="id">产品</div>
+            <div field="personRatio">个人比例</div>
+            <div field="groupRatio">集体比例</div>
+            <div field="qsongRatio">青松比例</div>
+            <div field="ohterRatio">其他比例</div>
+        </div>
+        <div class="boot-toolbar" id="toolbar">
+            <a class="boot-button" onclick="alert(JSON.stringify(boot.get('dataform').getData()));">获取数据</a>
+            <a class="boot-button" onclick="setData">设置form数据</a>
+        </div>
+        <script type="text/javascript">
+            boot.parse();
+            var data = [{
+                "groupRatio" : 0.5,
+                "id" : "71a3475e017e47dc9319d76adf38bc5b",
+                "otherRatio" : 0.0,
+                "personRatio" : 0.0,
+                "proID" : "8e34d39874db4dbc9498310895003781",
+                "prodPrice" : 121.0,
+                "productID" : "121",
+                "qsongRatio" : 0.5,
+                "ratio" : "集体比例：50.0%;青松比例：50.0%;",
+                "serviceNum" : 2121,
+                "updateTime" : "2014-11-28T00:00:00"
+            }, {
+                "groupRatio" : 1.0,
+                "id" : "727148f64d1940a49bfb97f57718ba79",
+                "proID" : "66495b4aad5840b58a08856ac810ff23",
+                "prodPrice" : 100.0,
+                "productID" : "关节康复",
+                "ratio" : "集体比例：100.0%;",
+                "serviceNum" : 10
+            }, {
+                "groupRatio" : 0.8,
+                "id" : "ac37d76e7cfb432d88c45c8f0575d0e4",
+                "personRatio" : 0.2,
+                "proID" : "8e34d39874db4dbc9498310895003781",
+                "prodPrice" : 23.0,
+                "productID" : "ffa1d6d3dd9f4502903d52008b095fd1",
+                "ratio" : "个人比例：20.0%;集体比例：80.0%;",
+                "serviceNum" : 231
+            }, {
+                "groupRatio" : 0.2,
+                "id" : "dbfdbc313d6641c694e009460853ce55",
+                "personRatio" : 0.8,
+                "proID" : "a10924bf2a5d4a74bcb8219ca957859e",
+                "prodPrice" : 3443.0,
+                "productID" : "34434",
+                "ratio" : "个人比例：80.0%;集体比例：20.0%;",
+                "serviceNum" : 3443
+            }];
+            boot.get('grid').loadData(data);
+            function renderChcekbox(e){
+                return '<input type="checkbox" onclick="alert()"/>';
+            }
+         </script>
+	</body>
+</html>

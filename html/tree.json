@@ -1,0 +1,25 @@
+{
+	"success": true,
+	"resultData": [
+	{ "id": "0", "text": "布局", "parentid": "" }, 
+	{ "id": "00", "text": "上中下左右", "parentid": "0", "url": "./layout/layout0.html" }, 
+	{ "id": "01", "text": "左中右", "parentid": "0", "url": "./layout/layout1.html" }, 
+	{ "id": "02", "text": "上左中", "parentid": "0", "url": "./layout/layout2.html" }, 
+	{ "id": "03", "text": "左中", "parentid": "0", "url": "./layout/layout3.html" }, 
+	
+	{ "id": "1", "text": "树型数据", "parentid": "" }, 
+	{ "id": "10", "text": "checkbox树", "parentid": "1", "url": "./tree/tree.html"}, 
+	{ "id": "11", "text": "click树", "parentid": "1", "url": "./tree/clicktree.html"}, 
+	
+	{ "id": "2", "text": "门户页面", "parentid": ""}, 
+	{ "id": "20", "text": "可拖拽门户", "parentid": "2", "url": "./portal/portal.html"},
+	
+	{ "id": "3", "text": "面板", "parentid": ""}, 
+	{ "id": "30", "text": "可拖拽面板", "parentid": "3", "url": "./panel/dragPanel.html"}, 
+	{ "id": "31", "text": "静态定位面板", "parentid": "3", "url": "./panel/staticPanel.html"}, 
+	{ "id": "32", "text": "任务栏面板", "parentid": "3", "url": "./panel/taskPanel.html"},
+	
+	{ "id": "4", "text": "弹出窗口", "parentid": ""}, 
+	{ "id": "40", "text": "按钮弹出窗口", "parentid": "4", "url": "./popupwindow/popupwindow.html"}
+]
+}

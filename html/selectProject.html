@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>index</title>
+		<script type="text/javascript" src="../js/load.js"></script>
+		<script type="text/javascript">
+		    var data = [{'id': 1, 'name': '在职'}, {'id': 0, 'name': '离职'}];
+		</script>
+	</head>
+	<body>
+	    <div id="grid" 
+	    class="boot-datagrid" 
+	    height="400" 
+	    autoLoad="false"
+	    showIndex="true" 
+	    showPager="false"
+	    multiSelect="false"
+	    showSelectBox="true" 
+	    allowCellEdit="true">
+	        <div field="proID">项目名称</div>
+            <div field="phone" width="50" render="renderChcekbox">选择</div>
+            <div field="id">产品</div>
+            <div field="personRatio">个人比例</div>
+            <div field="groupRatio">集体比例</div>
+            <div field="qsongRatio">青松比例</div>
+            <div field="ohterRatio">其他比例</div>
+	    </div>
+	    <input type="button" onclick="getColumn()" value="获取column对象"/>
+	</body>
+	<script type="text/javascript">
+	   boot.parse("grid");
+	    var grid = boot.get('grid');
+        function renderChcekbox(e){
+            return '<input type="checkbox" onclick="alert()"/>';
+        }
+        function getColumn(){
+            var column = grid.getColumn('name');
+            console.log(column);
+            alert(JSON.stringify(column));
+        }
+        function ondestroy(e){
+            var editor = e.cellEditor;
+            var cellInfo = editor.customOptions._parent;
+            var rowData = grid.getActivedRow();
+            var value = e.window._returnValue;
+            alert(JSON.stringify(value));
+            boot.concat(rowData, value);
+            console.log(rowData);
+        }
+	</script>
+</html>

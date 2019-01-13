@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>index</title>
+		<script type="text/javascript" src="../js/load.js"></script>
+		<script type="text/javascript">
+		    var data = [{'id': 1, 'name': '在职'}, {'id': 0, 'name': '离职'}];
+		</script>
+	</head>
+	<body>
+	    <div id="query" 
+	    showField="name"
+        binding="grid"
+        class="boot-search">
+            <input id="bb" name="name" emptyText="姓名" class="boot-textbox"/>
+            <table>
+                <tr>
+                    <td>
+                        password:<input id="ff" name="password" value="" class="boot-password"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        date:<input id="kk" name="birthday" value="" class="boot-date"/>
+                    </td>
+                </tr>
+            </table>
+        </div>  
+	    <div id="grid" 
+	    class="boot-datagrid" 
+	    height="400" 
+	    showIndex="true" 
+	    showPager="false"
+	    showSelectBox="true" 
+	    allowCellEdit="true"
+	    url="grid.json">
+	        <div field="name" locked="true" editor="{type: 'textbox'}">姓名</div>
+	        <div field="sex">性别</div>
+	        <div field="status" width="150" editor="{'type': 'combobox', 'data': data}">状态</div>
+	        <div field="code" width="150" editor="{'type': 'popupedit', 'url': data}">身份证号</div>
+	        <div field="phone" width="150">手机号</div>
+	        <div field="birthday" width="150">生日</div>
+	    </div>
+	    <input type="button" onclick="getSelectedRow()" value="获取checkbox值"/>
+	    <input type="button" onclick="getActivedRow()" value="获取点击"/>
+	    <input type="button" onclick="getChangedData()" value="获取点击"/>
+	</body>
+	<script type="text/javascript">
+	   boot.parse("grid");
+	    var grid = boot.get('grid');
+        function getSelectedRow(){
+            var rows = grid.getSelectedRows();
+            console.log(rows);
+            alert(rows.length);
+        }
+        
+        function getActivedRow(){
+            var rows = grid.getActivedRow();
+            console.log(rows);
+            alert(rows.length);
+        }
+        function getChangedData(){
+            var rows = grid.getChangedData();
+            console.log(rows);
+            alert(rows.length);
+        }
+	</script>
+</html>

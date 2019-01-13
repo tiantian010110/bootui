@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>上传文件</title>
+        <script type="text/javascript" src="../js/load.js"></script>
+        <script type="text/javascript" src="../js/plugin/upload/upload.js"></script>
+        <style type="text/css">
+        	
+        </style>
+    </head>
+    <body>
+    	<div id="file" class="boot-fileupload" required="true" pathField="url" filter="doc,docx,xls,xlsx,ppt,pdf" fileType="office"
+									action="${pageContext.request.contextPath}/upload/uploadAction" width="300"></div>
+    	<input id="a" onclick="upload()" type="button" value="提交"/>
+	<script>
+	boot.parse();
+	var up = boot.get("file");
+	function upload(){
+		up.upload();
+		
+	}
+	</script>
+    </body>
+</html>
+

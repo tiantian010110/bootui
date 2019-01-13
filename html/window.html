@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>index</title>
+		<script type="text/javascript" src="../js/load.js"></script>
+	</head>
+	<body>
+	    <div class="boot-toolbar" id="toolbar">
+	        <a class="boot-button" onclick="alert(JSON.stringify(boot.get('dataform').getData()));">获取form数据</a>
+            <a class="boot-button" onclick="setData">设置form数据</a>
+	    </div>
+	    <div id="dataform" class="boot-dataform">
+    	    <table>
+    	        <tr>
+    	            <td>
+                        <input id="aa" name="department" text="住建部" value="住建部" class="boot-popupedit"/>
+    	            </td>
+    	        </tr>
+    	        <tr>
+    	            <td>
+                        <iframe src="#"></iframe>
+    	            </td>
+    	        </tr>
+    	    </table>
+        </div>  
+	</body>
+	<script type="text/javascript">
+        $(function(){
+        	var aa = boot.get('aa');
+            aa.bind('buttonclick', function(e){
+                boot.dialog({
+                    name: 123,
+                    showHead: true,
+                    showMax: true,
+                    fullScreen: true,
+                    title: 'dragable panel',
+                    url: "index.html",
+                    onload: function(e){alert('onload');},
+                    ondestroy: function(e){aa.setValue("11");aa.setText("111");}
+                });
+            });
+        });
+    </script>
+</html>

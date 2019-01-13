@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+		<title>tree</title>
+        <script type="text/javascript" src="../js/load.js"></script>
+        <script type="text/javascript">
+            var data = [{'id': 1, 'name': '在职'}, {'id': 0, 'name': '离职'}];
+        </script>
+	</head>
+
+	<body>
+	    <div id="layout" class="boot-layout" style="width:100%;height: 100%;">
+            <div class="layout-head" visible="false"> </div>
+            <div class="layout-middle">
+                <div class="layout-middle-left" width="200">
+                    <div id="tree1" 
+                        class="boot-tree" 
+                        url="tree.json" 
+                        showHead="true" 
+                        showClose="false"
+                        showCheckbox="true"
+                        loadType="lazy"
+                        title="tree"
+                        binding="grid"
+                        style="width: 100%;height: 100%;"
+                    > </div>
+                </div>
+                <div class="layout-middle-center">
+                    <div id="grid" 
+                    class="boot-datagrid" 
+                    autoAdpt="true"
+                    autoLoad="false"
+                    showIndex="true" 
+                    showPager="false"
+                    showSelectBox="true" 
+                    allowCellEdit="true"
+                    url="grid.json">
+                        <div field="name" locked="true" editor="{type: 'textbox'}">姓名</div>
+                        <div field="sex">性别</div>
+                        <div field="status" width="150" editor="{'type': 'combobox', 'data': data}">状态</div>
+                        <div field="code" width="150" editor="{'type': 'popupedit', 'url': data}">身份证号</div>
+                        <div field="phone" width="150">手机号</div>
+                        <div field="birthday" width="150">生日</div>
+                    </div>
+                    <button onclick="boot.get('tree1').reload()">reload</button>
+                </div>
+                <div class="layout-middle-right" visible="false"> </div>
+            </div>
+            <div height="100" class="layout-foot" visible="false"> </div>
+        </div>
+        <script type="text/javascript">
+        	boot.parse();
+            boot.get('tree1').bind('nodeclick', function(e){
+            	console && console.log(e.node, e.sender.getSelectedNode())
+            });
+            boot.get('tree1').bind('loadsuccess', function(e){
+                this.checkCheckBox({id: '00'}, true)
+             });
+        </script>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>index</title>
+        <script type="text/javascript" src="../js/load.js"></script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>显示日期，自动填充当前时间
+                    <div class="boot-date" format="yyyy-mm-dd hh:mi:ss"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>显示日期，自动填充当前时分
+                    <div class="boot-date" format="yyyy-mm-dd hh:mi"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>显示日期，自动填充当前时
+                    <div class="boot-date" format="yyyy-mm-dd hh" value="2015-01-07 15:00:00"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>显示日期，只填充日期
+                    <div class="boot-date" format="yyyy-mm-dd"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>显示日期和时间，选择时分秒
+                    <div class="boot-date" format="yyyy-mm-dd hh:mi:ss" showTime="true"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>显示日期和时间，选择时分
+                    <div class="boot-date" format="yyyy-mm-dd hh:mi" showTime="true"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>显示日期和时间，选择时
+                    <div class="boot-date" format="yyyy-mm-dd hh" value="2015-01-07 15:00:00" showTime="true"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>显示日期和时间，只能填充日期
+                    <div class="boot-date" format="yyyy-mm-dd" showTime="true"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>显示时间
+                    <div class="boot-date" format="hh:mi:ss" onlyTime="true"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>显示年月
+                    <div class="boot-date" format="yyyy-MM"></div>
+                    <input class="boot-date" format="yyyy-MM" />
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

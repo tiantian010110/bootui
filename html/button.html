@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+		<title>tree</title>
+        <script type="text/javascript" src="../js/load.js"></script>
+        <script type="text/javascript" src="../js/plugin/boot.prompt.js"></script>
+            <style type="text/css">
+    #d .boot-button
+    {
+        margin-right:10px;
+        margin-bottom:10px;
+    }
+    </style>
+
+</head>
+<body >
+    
+    <br />
+
+    <div id="d">
+    </div>
+
+</body>
+</html>
+<script type="text/javascript">
+    var buttons = ["add", "edit", "remove", "save", "close", "sure",
+                  "no", "yes", "reload", "search", "print",
+                  "zoomin", "zoomout", "date",
+                  "upgrade", "downgrade", "download", "upload", "user",
+                  "author", "role"
+                ];
+
+    function createButtons(id) {
+        var el = document.getElementById(id);
+        var html = "";
+        for (var i = 0, l = buttons.length; i < l; i++) {
+            var button = buttons[i];
+            html += '<a class="boot-button" iconCls="' + button + '" onclick="show(\''+ button +'\')">' + button + '</a>';
+        }
+        el.innerHTML = html;
+        boot.parse();
+    }
+
+    createButtons("d");
+
+    function show(msg){
+    	boot.alert(msg);
+    }
+</script>

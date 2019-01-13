@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>index</title>
+<link rel="stylesheet" href="../js/kindeditor/themes/default/default.css" />
+<script charset="utf-8" src="../js/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="../js/kindeditor/lang/zh_CN.js"></script>
+<script type="text/javascript" src="../js/load.js"></script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>
+				<div class="boot-richtext" name="editor" id="editor" value="dsfaasfasd"></div>
+			</td>
+		</tr>
+		<tr>
+			<td id="console"></td>
+		</tr>
+		<tr>
+			<td><a class="boot-button" onclick="getData">获取数据</a> <a class="boot-button" onclick="setData">设置数据</a></td>
+			<td><a class="boot-button" onclick="setDisabled">设置不可用</a> <a class="boot-button" onclick="setEnabled">设置可用</a></td>
+			<td><a class="boot-button" onclick="setReadonly">设置只读</a> <a class="boot-button" onclick="setEdit">设置读写</a></td>
+			<td><a class="boot-button" onclick="setOnlyView">设置查看模式</a> <a class="boot-button" onclick="setFull">设置完整模式</a></td>
+		</tr>
+	</table>
+</body>
+<script type="text/javascript">
+	boot.parse();
+	var editor = boot.get("editor");
+	function setOnlyView() {
+		editor.setOnlyView(true);
+	}
+	function setFull() {
+		editor.setOnlyView(false);
+	}
+	function setReadonly() {
+		editor.setAllowEdit(true);
+	}
+	function setEdit() {
+		editor.setAllowEdit(false);
+	}
+	function setDisabled() {
+
+		editor.setEnabled(false);
+	}
+	function setEnabled() {
+		editor.setEnabled(true);
+	}
+	function setData() {
+		var value = editor.setHtml("这是个测试 editor!");
+	}
+	function getData() {
+		var value = editor.getHtml();
+		$("#console").html(value);
+	}
+</script>
+</html>

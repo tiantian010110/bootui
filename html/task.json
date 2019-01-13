@@ -1,0 +1,77 @@
+{
+    "success": true,
+    "resultData": [
+        {
+            "id": "11",
+            "_mark": 1,
+            "text": "客户管理",
+            "url": "",
+            "icon": "",
+            "dragable": false
+        },
+        {
+            "id": "22",
+            "_mark": 2,
+            "text": "服务管理",
+            "url": "",
+            "icon": "",
+            "dragable": false
+        },
+        {
+            "id": "33",
+            "_mark": 3,
+            "text": "产品管理",
+            "url": "",
+            "icon": "",
+            "dragable": false
+        },
+        {
+            "id": "44",
+            "_mark": 4,
+            "text": "财务管理",
+            "url": "",
+            "icon": "",
+            "dragable": false
+        },
+        {
+            "id": "55",
+            "_mark": 5,
+            "text": "运营管理",
+            "url": "",
+            "icon": "",
+            "dragable": false
+        },
+        {
+            "id": "66",
+            "_mark": 6,
+            "text": "呼叫中心",
+            "url": "",
+            "icon": "",
+            "dragable": false
+        },
+        {
+            "id": "77",
+            "_mark": 7,
+            "text": "日常办公",
+            "url": "",
+            "icon": "",
+            "dragable": false
+        },
+        {
+            "id": "88",
+            "_mark": 8,
+            "text": "报表中心",
+            "url": "",
+            "icon": "",
+            "dragable": false
+        },
+        {
+            "id": "99",
+            "_mark": 9,
+            "text": "知识库管理",
+            "url": "",
+            "icon": "",
+            "dragable": false
+        }
+    ]
+}

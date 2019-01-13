@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>index</title>
+        <script type="text/javascript" src="../js/load.js"></script>
+        <script type="text/javascript">
+            var data = [{'id': 1, 'name': '在职'}, {'id': 0, 'name': '离职'}];
+        </script>
+    </head>
+    <body>
+        <div id="grid" 
+	        class="boot-datagrid" 
+	        showTooltip="true"
+	        height="400" 
+			showIndex="false" 
+			allowCellEdit="true"
+			control="['add', 'edit', 'remove']"
+        url="grid.json">
+            <div field="name" locked="true" editor="{type: 'textbox'}">姓名</div>
+            <div field="sex">性别</div>
+            <div field="status" width="150" editor="{'type': 'combobox', 'data': data}">状态</div>
+            <div field="code" width="150" editor="{'type': 'popupwindow', 'url': 'percentage.html', 'popupWidth': '400', 'popupHeight': '300', 'ondestroy': 'ondestroy'}">身份证号</div>
+            <div field="phone" width="150">手机号</div>
+            <div field="birthday" width="150" editor="{'type': 'date'}">生日</div>
+        </div>
+        <input type="button" onclick="getSelectedRows()" value="获取checkbox值"/>
+        <input type="button" onclick="getActivedRow()" value="获取点击行"/>
+        <input type="button" onclick="getChangedData()" value="获取变更数据"/>
+        <input type="button" onclick="checkRows()" value="回选row"/>
+        <input type="button" onclick="addRows()" value="新增行"/>
+        <input type="button" onclick="getColumn()" value="获取column对象"/>
+        <input type="button" onclick="setUnEdit()" value="禁止选中行编辑"/>
+        <input type="button" onclick="setUnCheck()" value="禁止选中行check"/>
+    </body>
+    <script type="text/javascript">
+       boot.parse("grid");
+        var grid = boot.get('grid');
+        function checkRows(){
+            var rows = [ {
+                "id": "8",
+                "name": "甜田",
+                "status": 1,
+                "sex": "男",
+                "age": 26,
+                "birthday": "1988-06-17",
+                "code": "121212121212121212",
+                "phone": "18600678617"
+            }, {
+                "id": "10",
+                "name": "甜田",
+                "sex": "男",
+                "age": 26,
+                "status": 1,
+                "birthday": "1988-06-17",
+                "code": "121212121212121212",
+                "phone": "18600678617"
+            }];
+            grid.checkRows(rows);
+        }
+        function addRows(){
+            var rows = [ {
+                "id": "15",
+                "name": "甜田",
+                "status": 0,
+                "sex": "男",
+                "age": 26,
+                "birthday": "1988-06-17",
+                "code": "121212121212121212",
+                "phone": "18600678617"
+            }, {
+                "id": "16",
+                "name": "甜田",
+                "sex": "男",
+                "age": 26,
+                "status": 0,
+                "birthday": "1988-06-17",
+                "code": "121212121212121212",
+                "phone": "18600678617"
+            }];
+            grid.addRows(rows);
+        }
+        
+        function getSelectedRows(){
+            var rows = grid.getSelectedRows();
+            window.console && window.console.log(rows);
+            alert(JSON.stringify(rows));
+        }
+        
+        function getActivedRow(){
+            var row = grid.getActivedRow();
+            window.console && window.console.log(row);
+            alert(JSON.stringify(row));
+        }
+        function getChangedData(){
+            var rows = grid.getChangedData();
+            window.console && window.console.log(rows);
+            alert(JSON.stringify(rows));
+        }
+        function getColumn(){
+            var column = grid.getColumn('name');
+            window.console && window.console.log(column);
+            alert(JSON.stringify(column));
+        }
+        function ondestroy(e){
+            var editor = e.cellEditor;
+            var cellInfo = editor.customOptions._parent;
+            var rowData = grid.getActivedRow();
+            var value = e.window._returnValue;
+            alert(JSON.stringify(value));
+            boot.concat(rowData, value);
+            window.console && window.console.log(rowData);
+        }
+        function setUnCheck(){
+            var row = grid.getActivedRow();
+            grid.setAllowCheck(row, false);
+        }
+       // 设置是否允许编辑行
+        function setUnEdit(){
+            var row = grid.getActivedRow();
+            grid.setAllowEditRow(row, false);
+        }
+        grid.bind('beforerender', function(){window.console && window.console.log(1);})
+    </script>
+</html>

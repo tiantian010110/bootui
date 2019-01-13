@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style type="text/css">
+            .boot-navigator {
+                width: 100%;
+                font-size: 12px;
+            }
+            .navigator-border {
+                border: 1px solid #999;
+                overflow: hidden;
+                position: relative;
+            }
+            .navigator-inner {
+                padding: 1px;
+                position: relative;
+                margin: 0;
+                border: 0;
+                height: auto;
+                overflow: hidden;
+            }
+            .navigator-menu-float {
+                position: relative;
+                overflow: hidden;
+                float: left;
+            }
+            .navigator-menuitem {
+                line-height: 20px;
+                height: auto;
+                width: auto;
+                position: relative;
+                border: 0;
+                padding: 1px;
+                float: left;
+            }
+            .navigator-menuitem-inner {
+                padding-left: 2px;
+                padding-right: 2px;
+                position: relative;
+            }
+            .navigator-menuitem-icon {
+                width: 16px;
+                height: 16px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .navigator-menuitem-text {
+                display: inline-block;
+                vertical-align: middle;
+                cursor: default;
+                color: #201F35;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .navigator-menuitem-allow {
+                width: 8px;
+                height: 16px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .navigator-separator {
+                float: left;
+                display: inline;
+                border: 0;
+                border-left: solid 1px #9B9B9B;
+                margin: 1px;
+                margin-top: 6px;
+                height: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="boot-navigator" style="height: auto;">
+            <div class="navigator-border" style="height: auto;">
+                <div class="navigator-inner">
+                    <div class="navigator-menu-float" style="height: auto;">
+                        <div class="navigator-menuitem">
+                            <div class="navigator-menuitem-inner">
+                                <div class="navigator-menuitem-icon"></div><div class="navigator-menuitem-text">文件(F)</div><div class="navigator-menuitem-allow"></div>
+                            </div>
+                        </div>
+                        <span class="navigator-separator"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

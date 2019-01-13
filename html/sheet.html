@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>index</title>
+<link href="../css/boot.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/root/jquery.min.js"></script>
+<script type="text/javascript" src="../js/root/boot.js"></script>
+<script type="text/javascript" src="../js/plugin/boot.tooltip.js"></script>
+<script type="text/javascript" src="../js/plugin/boot.validate.js"></script>
+<script type="text/javascript" src="../js/plugin/boot.button.js"></script>
+<script type="text/javascript" src="../js/plugin/boot.textbox.js"></script>
+<script type="text/javascript" src="../js/plugin/boot.popupedit.js"></script>
+<script type="text/javascript" src="../js/plugin/boot.listbox.js"></script>
+<script type="text/javascript" src="../js/plugin/boot.combobox.js"></script>
+<script type="text/javascript" src="../js/plugin/boot.pager.js"></script>
+<script type="text/javascript" src="../js/plugin/boot.datasheet.js"></script>
+<style type="text/css">
+.datasheet-border {
+	border: solid 1px #999;
+	position: relative;
+}
+
+.lock-table-border, .freedom-table-border {
+	display: inline-block;
+	position: relative;
+	z-index: 2;
+}
+
+.datasheet-border .datasheet-head .freedom-table-border table td {
+	border-bottom: none;
+}
+
+.datasheet-border .datasheet-head .freedom-table-border table {
+	width: 100%;
+}
+
+.datasheet-border .datasheet-body .freedom-table-border table {
+	width: 100%;
+}
+
+.datasheet-head {
+	background-image:
+		url('http://www.miniui.com/scripts/miniui/themes/default/images/grid/header.png');
+	background-repeat: repeat-x;
+	background-color: #E9EDF0;
+}
+
+.datasheet-head, .datasheet-body {
+	position: relative;
+	margin-bottom: -1px;
+}
+
+.datasheet-body {
+	border-top: solid 1px #999;
+}
+
+.freedom-table-border {
+	position: absolute;
+	margin-left: -1px;
+	margin-right: -1px;
+	height: 100%;
+	overflow: auto;
+	z-index: 1;
+	top: 0;
+	bottom: 0;
+	border-color: #999;
+}
+
+.datasheet-border td {
+	font-size: 12px;
+	border: solid 1px #aaa;
+	padding: 0 2px;
+	border-top: none;
+}
+
+.datasheet-border .datasheet-body td {
+	line-height: 20px;
+}
+
+.dirty {
+	background:
+		url('http://localhost:8080/myui/bootui/css/images/icons/dirty.gif')
+		no-repeat right 4px;
+}
+
+.datasheet-border .datasheet-head td {
+	text-align: center;
+	line-height: 22px;
+}
+
+.datasheet-border .datasheet-head td .resize {
+	top: 0;
+	position: absolute;
+	bottom: 0;
+	right: -2px;
+	cursor: col-resize;
+}
+
+.datasheet-border .datasheet-head .freedom-table-border {
+	/* 	border-right: solid 1px #999; */
+	
+}
+
+.datasheet-border td .cell {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	-icab-text-overflow: ellipsis;
+	-khtml-text-overflow: ellipsis;
+	-moz-text-overflow: ellipsis;
+	-webkit-text-overflow: ellipsis;
+	font-size: 12px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+.datasheet-foot {
+	height: 26px;
+	border-top: solid 1px #AAA;
+	position: relative;
+	z-index: 3;
+	background-color: #F1F1F1;
+	moz-user-select: -moz-none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-khtml-user-select: none; /* you could also put this in a class */
+	-webkit-user-select: none; /* and add the CSS class here instead */
+	-ms-user-select: none;
+	user-select: none; /**禁止选中文字*/
+}
+
+.datasheet-foot td {
+	border: none;
+}
+
+.hide {
+	display: none;
+}
+</style>
+<script type="text/javascript">
+	var data = [ {
+		'id' : 1,
+		'name' : '在职'
+	}, {
+		'id' : 0,
+		'name' : '离职'
+	} ];
+</script>
+</head>
+<body>
+	<div id="sheet" class="boot-datasheet" showSelectBox="true" showIndex="true" allowCellEdit="true" control="['add', 'edit', 'remove']" url="grid.json">
+		<div field="name" width="80" locked="true" editor="{type: 'textbox'}">姓名</div>
+		<div field="sex">性别</div>
+		<div field="status" width="150" editor="{'type': 'combobox', 'data': data}">状态</div>
+		<div field="code" width="150"
+			editor="{'type': 'popupwindow', 'url': 'percentage.html', 'popupWidth': '400', 'popupHeight': '300', 'ondestroy': 'ondestroy', 'onlyView': true}">身份证号</div>
+		<div field="phone" width="150">手机号</div>
+		<div field="birthday" width="150" editor="{'type': 'date'}">生日</div>
+	</div>
+	<br />
+	<br />
+	<div class="boot-datasheet" showSelectBox="true" allowCellEdit="true" control="['add', 'edit', 'remove']" showIndex="true" width="650" url="grid.json">
+		<div field="name" locked="true" editor="{type: 'textbox'}">姓名</div>
+		<div field="sex">性别</div>
+		<div field="status" width="120">状态</div>
+		<div field="code" width="120">身份证号</div>
+		<div field="phone" width="120">手机号</div>
+		<div field="birthday" width="120">生日</div>
+	</div>
+</body>
+<script type="text/javascript">
+	boot.parse();
+</script>
+</html>

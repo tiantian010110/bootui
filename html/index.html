@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>index</title>
+		<script type="text/javascript" src="../js/load.js"></script>
+	</head>
+	<body>
+	    <div class="boot-toolbar" id="toolbar">
+	        <a class="boot-button" onclick="alert(JSON.stringify(boot.get('dataform').getData()));">获取form数据</a>
+            <a class="boot-button" onclick="setData">设置form数据</a>
+	    </div>
+	    <div id="dataform" class="boot-dataform">
+    	    <table>
+    	        <tr>
+    	            <td>
+                        <input id="bb" name="name" value="12345678900" class="boot-textbox"/>
+                        <button onclick="alert(boot.get('bb').getValue());">getValue</button>
+                        <button onclick="boot.get('bb').setValue(12345678);">setValue</button>
+    	            </td>
+    	        </tr>
+    	        <tr>
+    	            <td>
+                        <input id="ff" name="password" value="12345678900" class="boot-password"/>
+                        <button onclick="alert(boot.get('ff').getValue());">getValue</button>
+                        <button onclick="boot.get('ff').setValue('00000000');">setValue</button>
+    	            </td>
+    	        </tr>
+    	        <tr>
+    	            <td>
+                        <input id="cc" name="sex" value="2" textField="name" valueField="id" url="../html/combo.json" class="boot-combobox"/>
+                        <button onclick="alert(JSON.stringify(boot.get('cc').getData()));">getData</button>
+                        <button onclick="alert(boot.get('cc').getValue());">getValue</button>
+                        <button onclick="boot.get('cc').setValue(12345678);">setValue</button>
+    	            </td>
+    	        </tr>
+    	        <tr>
+    	            <td>
+                        <input id="ccc" name="sex" value="2" textField="name" valueField="id" data="[{'id': 0, 'name': '女'},{'id': 1, 'name': '男'},{'id': 2, 'name': '－_－^'}]" class="boot-combobox"/>
+                        <button onclick="alert(JSON.stringify(boot.get('ccc').getData()));">getData</button>
+                        <button onclick="alert(boot.get('ccc').getValue());">getValue</button>
+                        <button onclick="boot.get('ccc').setValue(12345678);">setValue</button>
+    	            </td>
+    	        </tr>
+    	        <tr>
+    	            <td>
+                        <input id="hh" name="idCard" url="../html/combo.json" class="boot-autocomplete"/>
+                        <button onclick="alert(JSON.stringify(boot.get('hh').getData()));">getData</button>
+                        <button onclick="alert(boot.get('hh').getValue());">getValue</button>
+                        <button onclick="boot.get('hh').setValue(12345678);">setValue</button>
+    	            </td>
+    	        </tr>
+    	        <tr>
+    	            <td>
+                        <div id="ee" columnSize="2" name="type" textField="name" valueField="id" value="jp,cn" url="../html/checkbox.json" class="boot-checkbox"></div>
+                        <button onclick="alert(JSON.stringify(boot.get('ee').getData()));">getData</button>
+                        <button onclick="alert(boot.get('ee').getValue());">getValue</button>
+                        <button onclick="boot.get('ee').setValue('cn');">setValue</button>
+    	            </td>
+    	        </tr>
+    	        <tr>
+    	            <td>
+                        <div id="gg" name="nationality" columnSize="2" textField="name" valueField="id" value="jp" url="../html/checkbox.json" class="boot-radiobox"></div>
+                        <button onclick="alert(JSON.stringify(boot.get('gg').getData()));">getData</button>
+                        <button onclick="alert(boot.get('gg').getValue());">getValue</button>
+                        <button onclick="boot.get('gg').setValue('cn');">setValue</button>
+    	            </td>
+    	        </tr>
+    	        <tr>
+    	            <td>
+                        <input id="aa" name="department" text="住建部" value="住建部" class="boot-popupedit"/>
+    	            </td>
+    	        </tr>
+    	        <tr>
+    	            <td>
+                        <input id="dd" name="remark" value="fuck 住建部" class="boot-textarea"/>
+                        <button onclick="alert(boot.get('dd').getValue());">getValue</button>
+                        <button onclick="boot.get('dd').setValue(12345678);">setValue</button>
+    	            </td>
+    	        </tr>
+    	        <tr>
+    	            <td>
+                         <div class="boot-combobox" url="filter.json" allowFilter="true"></div>
+    	            </td>
+    	        </tr>
+    	        <tr> 
+    	            <td>
+                        <div class="boot-combobox" url="combo.json" style="margin-left: 10px;"></div>
+				        <div class="boot-listbox" url="combo.json" style="width: 100px;height: 50px;"></div>
+    	            </td>
+    	        </tr>
+    	    </table>
+        </div>  
+	</body>
+	<script type="text/javascript">
+        function setData() {
+            var o = {
+                name : 'xltian010110',
+                password : '010110',
+                sex : 1,
+                nationality : "cn",
+                department : 'BI商业智能',
+                remark : "I love BI商业智能!"
+            };
+            boot.get('dataform').setData(o);
+        }
+        $(function(){
+            boot.get('dataform').query({url: "../html/form.json"});
+        });
+    </script>
+</html>

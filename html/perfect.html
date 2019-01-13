@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>index</title>
+        <script type="text/javascript" src="../js/load.js"></script>
+        <script type="text/javascript">
+            var data = [{'id': 1, 'name': '在职'}, {'id': 0, 'name': '离职'}];
+        </script>
+    </head>
+    <body>
+        <div class="boot-toolbar" id="toolbar">
+            <a class="boot-button" onclick="alert(JSON.stringify(boot.get('dataform').getData()));">获取数据</a>
+            <a class="boot-button" onclick="setData">设置form数据</a>
+            <a class="boot-button" iconCls="add">设置form数据</a>
+        </div>
+        <div id="dataform" 
+        binding="grid"
+        class="boot-dataform">
+            <table>
+                <tr>
+                    <td>
+                        textbox:<input id="bb" name="name" value="12345678900" width="500" required="true" class="boot-textbox"/>
+                        <button onclick="alert(boot.get('bb').getValue());">getValue</button>
+                        <button onclick="boot.get('bb').setValue(12345678);">setValue</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        password:<input id="ff" name="password" onchange="test" value="12345678900" class="boot-password"/>
+                        <button onclick="alert(boot.get('ff').getValue());">getValue</button>
+                        <button onclick="boot.get('ff').setValue('00000000');">setValue</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        password:<input id="oo" name="password1" value="12345678900" class="boot-password" enabled="false"/>
+                        <button onclick="alert(boot.get('ff').getValue());">getValue</button>
+                        <button onclick="boot.get('ff').setValue('00000000');">setValue</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        date:<input id="kk" name="birthday" value="1988-07-15" class="boot-date" format="yyyy-mm-dd hh:mi" readonly="true"/>
+                        <button onclick="alert(boot.get('kk').getValue());">getValue</button>
+                        <button onclick="boot.get('kk').setValue('2014-11-19');">setValue</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        decimal(number):<input id="ll" name="age" maxValue="100" value="123456.12345" format="c4" class="boot-number"/>
+                        <button onclick="alert(boot.get('ll').getValue());">getValue</button>
+                        <button onclick="boot.get('ll').setValue('1233435435.98786');">setValue</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        percentage(number):<input id="mm" name="test" maxValue="1" value="123456.12345" format="p4" class="boot-number"/>
+                        <button onclick="alert(boot.get('mm').getValue());">getValue</button>
+                        <button onclick="boot.get('mm').setValue('1233435435.98786');">setValue</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        combobox:<input id="cc" name="sex" value="2" textField="name" valueField="id" url="../html/combo.json" class="boot-combobox"/>
+                        <button onclick="alert(JSON.stringify(boot.get('cc').getData()));">getData</button>
+                        <button onclick="alert(boot.get('cc').getValue());">getValue</button>
+                        <button onclick="boot.get('cc').setValue(12345678);">setValue</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        autocomplete:<input id="hh" name="idCard" url="../html/combo.json" class="boot-autocomplete"/>
+                        <button onclick="alert(JSON.stringify(boot.get('hh').getData()));">getData</button>
+                        <button onclick="alert(boot.get('hh').getValue());">getValue</button>
+                        <button onclick="boot.get('hh').setValue(12345678);">setValue</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        checkbox:<div id="ee" columnSize="2" name="type" showBorder="false" textField="name" valueField="id" value="jp" url="../html/checkbox.json" class="boot-checkbox"></div>
+                        <button onclick="alert(JSON.stringify(boot.get('ee').getData()));">getData</button>
+                        <button onclick="alert(boot.get('ee').getValue());">getValue</button>
+                        <button onclick="boot.get('ee').setValue('cn');">setValue</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        radiobox:<div id="gg" columnSize="2" name="nationality" textField="name" valueField="id" value="jp" url="../html/checkbox.json" class="boot-radiobox"></div>
+                        <button onclick="alert(JSON.stringify(boot.get('gg').getData()));">getData</button>
+                        <button onclick="alert(boot.get('gg').getValue());">getValue</button>
+                        <button onclick="boot.get('gg').setValue('cn');">setValue</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        popupwindow:<input id="nn" name="department1" class="boot-popupwindow" url="http://www.baidu.com"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        popupedit:<input id="aa" name="department" text="住建部" value="住建部" class="boot-popupedit"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        textarea:<input id="dd" name="remark" value="fuck 住建部" class="boot-textarea"/>
+                        <button onclick="alert(boot.get('dd').getValue());">getValue</button>
+                        <button onclick="boot.get('dd').setValue(12345678);">setValue</button>
+                    </td>
+                </tr>
+            </table>
+        </div>  
+        <div id="grid" 
+            class="boot-datagrid" 
+            height="400" 
+            autoLoad="false"
+            showIndex="true" 
+            cacheRow="true"
+            rowHeight="100"
+            showSelectBox="true" 
+            allowCellEdit="true"
+            url="grid.json">
+            <div field="name" locked="true" editor="{type: 'textbox', 'maxLength': 12}">姓名</div>
+            <div field="sex">性别</div>
+            <div field="status" width="150" editor="{'type': 'combobox', 'data': data}">状态</div>
+            <div field="code" width="150" editor="{'type': 'textarea', 'url': data}">身份证号</div>
+            <div field="phone" width="150">手机号</div>
+            <div field="birthday" width="150">生日</div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        boot.parse();
+        function setData() {
+            var o = {
+                name : 'xltian010110',
+                password : '010110',
+                sex : 1,
+                nationality : "cn",
+                department : 'BI商业智能',
+                remark : "I love BI商业智能!"
+            };
+            boot.get('dataform').setData(o);
+        }
+        boot.get('dataform').query({url: "../html/form.json"});
+        boot.get('dataform').bind('loadsuccess', function(e){
+            console.log(e.result, e.sender)
+        });
+        boot.get('ff').bind('change', function(e){
+            console.log(e, 1)
+        });
+        function test(e){
+            console.log(e, 2)
+        };
+    </script>
+</html>

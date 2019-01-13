@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>index</title>
+        <script type="text/javascript" src="../js/load.js"></script>
+    </head>
+    <body>
+        <div id="dataform" style="width: 900px;height: 400px;border: solid 1px silver;background-color: silver;">
+
+        </div>
+    </body>
+    <script type="text/javascript">
+        boot.parse();
+        var form = $("#dataform");
+        var menu = new boot.ContextMenu();
+        menu._setData([
+            { "id":1, "parentid":0, "text":"文件夹", "open": true, "children": [
+                { "id":11, "parentid":1, "text":"收件箱", "children": [
+            
+                    { "id":111, "parentid":11, "text":"收件箱1"},
+                    { "id":112, "parentid":111, "text":"收件箱2"},
+                    { "id":113, "parentid":112, "text":"收件箱3"},
+                    { "id":114, "parentid":113, "text":"收件箱4"}
+                ]},
+                { "id":12, "parentid":1, "text":"垃圾邮件"},
+                { "id":13, "parentid":1, "text":"草稿"},
+                { "id":14, "parentid":1, "text":"已发送邮件"},
+                { "id":15, "parentid":1, "text":"已删除邮件"}
+            ]},
+            { "id":3, "parentid":0, "text":"快速视图", "children": [
+                { "id":31, "parentid":3, "text":"文档"},
+                { "id":32, "parentid":3, "text":"照片"}
+            ]}
+        ]);
+        form.on('contextmenu', function(e){
+            menu._show(e);
+            return false;
+        });
+    </script>
+</html>

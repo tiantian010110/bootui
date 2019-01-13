@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>折叠导航菜单</title>
+<script type="text/javascript" src="../js/load.js"></script>
+<style type="text/css">
+</style>
+</head>
+
+<body>
+	<div id="accordion" showHead="false" showClose="false" class="boot-accordion" url="tree.json" loadType="lazy" title="导航菜单" width="200"></div>
+</body>
+<script type="text/javascript">
+	boot.parse();
+	var accordion = boot.get("accordion");
+	accordion.bind('nodeclick', function(e) {
+		if (e.node && e.node.url) {
+			boot.dialog({
+				showHead: true,
+				url : e.node.url.replace(/\.+\/\w+\//i, '')
+			})
+		}
+	});
+</script>
+
+</html>

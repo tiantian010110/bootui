@@ -1,0 +1,248 @@
+{
+	"success": true,
+	"resultData": {
+		"user": {
+			"right": 1
+		},
+		"company": {
+			"logo": null,
+			"background": null,
+			"copyRight": "由&nbsp;tiantian010110@126.com&nbsp;强力驱动"
+		},
+		"shortcuts": [
+			{
+				"id": "1",
+				"_mark": 1,
+				"text": "手风琴菜单",
+				"url": "http://198.13.56.237:8080/bootui/html/accordion.html",
+				"icon": "/desktop/kehuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "2",
+				"_mark": 2,
+				"text": "tree组件",
+				"url": "http://198.13.56.237:8080/bootui/html/tree.html",
+				"icon": "/desktop/fuwuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "3",
+				"_mark": 3,
+				"text": "可点击tree",
+				"url": "http://198.13.56.237:8080/bootui/html/clicktree.html",
+				"icon": "/desktop/chanpinguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "4",
+				"_mark": 4,
+				"text": "按钮",
+				"url": "http://198.13.56.237:8080/bootui/html/button.html",
+				"icon": "/desktop/caiwuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "5",
+				"_mark": 5,
+				"text": "万年历",
+				"url": "http://198.13.56.237:8080/bootui/html/calendar.html",
+				"icon": "/desktop/yunyingguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "6",
+				"_mark": 6,
+				"text": "下拉框",
+				"url": "http://198.13.56.237:8080/bootui/html/combobox.html",
+				"icon": "/desktop/hujiaozhongxin.png",
+				"dragable": true
+			},
+			{
+				"id": "7",
+				"_mark": 7,
+				"text": "右键菜单",
+				"url": "http://198.13.56.237:8080/bootui/html/contextmenu.html",
+				"icon": "/desktop/richangbangong.png",
+				"dragable": true
+			},
+			{
+				"id": "8",
+				"_mark": 8,
+				"text": "合并单元格",
+				"url": "http://198.13.56.237:8080/bootui/html/datagrid-pager.html",
+				"icon": "/desktop/baobiaozhongxin.png",
+				"dragable": true
+			},
+			{
+				"id": "9",
+				"_mark": 9,
+				"text": "表格",
+				"url": "http://198.13.56.237:8080/bootui/html/datagrid.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "10",
+				"_mark": 10,
+				"text": "日期控件",
+				"url": "http://198.13.56.237:8080/bootui/html/date.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "11",
+				"_mark": 11,
+				"text": "单选box",
+				"url": "http://198.13.56.237:8080/bootui/html/listbox.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "12",
+				"_mark": 12,
+				"text": "过滤下拉框",
+				"url": "http://198.13.56.237:8080/bootui/html/filtercombobox.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "13",
+				"_mark": 13,
+				"text": "导航",
+				"url": "http://198.13.56.237:8080/bootui/html/navigator.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "14",
+				"_mark": 14,
+				"text": "数字文本框",
+				"url": "http://198.13.56.237:8080/bootui/html/number.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "15",
+				"_mark": 15,
+				"text": "面板",
+				"url": "http://198.13.56.237:8080/bootui/html/panel.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "16",
+				"_mark": 16,
+				"text": "分页",
+				"url": "http://198.13.56.237:8080/bootui/html/pager.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "17",
+				"_mark": 17,
+				"text": "百分比",
+				"url": "http://198.13.56.237:8080/bootui/html/percentage.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "18",
+				"_mark": 18,
+				"text": "弹窗选择",
+				"url": "http://198.13.56.237:8080/bootui/html/popupWindow.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "19",
+				"_mark": 19,
+				"text": "新表格",
+				"url": "http://198.13.56.237:8080/bootui/html/sheet.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "20",
+				"_mark": 20,
+				"text": "富文本",
+				"url": "http://198.13.56.237:8080/bootui/html/richtext.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "21",
+				"_mark": 21,
+				"text": "弹窗",
+				"url": "http://198.13.56.237:8080/bootui/html/window.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "22",
+				"_mark": 22,
+				"text": "多页签",
+				"url": "http://198.13.56.237:8080/bootui/html/tabs.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "23",
+				"_mark": 23,
+				"text": "验证",
+				"url": "http://198.13.56.237:8080/bootui/html/valid.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "24",
+				"_mark": 24,
+				"text": "验证",
+				"url": "http://198.13.56.237:8080/bootui/html/validate.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "25",
+				"_mark": 25,
+				"text": "提示",
+				"url": "http://198.13.56.237:8080/bootui/html/tooltip.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "26",
+				"_mark": 26,
+				"text": "布局",
+				"url": "http://198.13.56.237:8080/bootui/html/layout.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "27",
+				"_mark": 27,
+				"text": "搜索",
+				"url": "http://198.13.56.237:8080/bootui/html/search.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "28",
+				"_mark": 28,
+				"text": "自动匹配",
+				"url": "http://198.13.56.237:8080/bootui/html/autocomplete.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			},
+			{
+				"id": "29",
+				"_mark": 29,
+				"text": "全家桶",
+				"url": "http://198.13.56.237:8080/bootui/html/perfect.html",
+				"icon": "/desktop/zhishikuguanli.png",
+				"dragable": true
+			}
+		],
+		"plugins": []
+	}
+}

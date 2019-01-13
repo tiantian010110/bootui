@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+		<title>tooltip</title>
+        <script type="text/javascript" src="../js/load.js"></script>
+        <script type="text/javascript">
+            var data = [{'id': 1, 'name': '在职'}, {'id': 0, 'name': '离职'}];
+        </script>
+        <style type="text/css">
+        	.tooltip-border{
+        		border-radius: 2px;
+        		background-color: #fff;
+        		border-color: #999;
+        	}
+        	.tooltip-text{
+        		padding: 4px;
+        		font-size: 12px;
+        		color: #666;
+        	}
+        </style>
+	</head>
+
+	<body>
+		<div id="grid" 
+	        class="boot-datagrid" 
+	        height="400" 
+	        showIndex="true"
+	        showTooltip="false" 
+	        autoAdapt="true"
+	        showPager="false"
+	        multiSelect="true"
+	        showSelectBox="true" 
+	        allowCellEdit="true"
+	        url="grid.json">
+	            <div field="name" locked="true" editor="{type: 'textbox'}" merge="true">姓名</div>
+	            <div field="sex">性别</div>
+	            <div field="age" allowSort="true">年龄</div>
+	            <div field="status" width="150" editor="{'type': 'combobox', 'data': data}">状态</div>
+	            <div field="code" width="150" editor="{'type': 'textarea'}">身份证号</div>
+	            <div field="phone" width="150">手机号</div>
+	            <div field="birthday" width="150" editor="{'type': 'date'}">生日</div>
+        </div>
+	    <div id="tooltip" class="boot-tooltip"></div>
+        <script type="text/javascript">
+        	boot.parse();
+        	var grid = boot.get('grid');
+        	boot.get('tooltip')._delegate("td", grid.freedomViewEl);
+        </script>
+	</body>
+</html>

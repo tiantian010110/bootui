@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>index</title>
+        <script type="text/javascript" src="../js/load.js"></script>
+        <script type="text/javascript">
+            var data = [{'id': 1, 'name': '在职'}, {'id': 0, 'name': '离职'}];
+        </script>
+    </head>
+    <body>
+        <div class="boot-toolbar" id="toolbar">
+            <a class="boot-button" onclick="alert(JSON.stringify(boot.get('dataform').getData()));">获取数据</a>
+        </div>
+        <div id="dataform" 
+        binding="grid"
+        class="boot-dataform">
+            <table>
+                <tr>
+                    <td>
+                        textbox:
+                    </td>
+                    <td>
+                        <input name="name" required="true" class="boot-textbox"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        password:
+                    </td>
+                    <td>
+                        <input name="password" required="true" class="boot-password"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        date:
+                    </td>
+                    <td>
+                        <input name="birthday" required="true" class="boot-date" format="yyyy-mm-dd hh:mi" readonly="true"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        decimal(number):
+                    </td>
+                    <td>
+                        <input name="age" maxValue="100" required="true" format="c4" class="boot-number"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        percentage(number):
+                    </td>
+                    <td>
+                        <input name="test" maxValue="1" required="true" format="p4" class="boot-number"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         combobox:
+                    </td>
+                    <td>
+                        <input name="sex" textField="name" required="true" valueField="id" url="../html/combo.json" class="boot-combobox"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        autocomplete:
+                    </td>
+                    <td>
+                        <input name="idCard" url="../html/combo.json" required="true" class="boot-autocomplete"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        checkbox:
+                    </td>
+                    <td>
+                        <div columnSize="2" name="type" textField="name" required="true" valueField="id" url="../html/checkbox.json" class="boot-checkbox"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        radiobox:
+                    </td>
+                    <td>
+                        <div columnSize="2" name="nationality" textField="name" required="true" valueField="id" url="../html/checkbox.json" class="boot-radiobox"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        popupwindow:
+                    </td>
+                    <td>
+                        <input name="department1" required="true" class="boot-popupwindow" url="http://www.baidu.com"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        popupedit:
+                    </td>
+                    <td>
+                        <input name="department" required="true" class="boot-popupedit"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        textarea:
+                    </td>
+                    <td>
+                        <input name="remark" required="true" class="boot-textarea"/>
+                    </td>
+                </tr>
+            </table>
+        </div>  
+        <div id="grid" 
+            class="boot-datagrid" 
+            height="400" 
+            showIndex="true" 
+            cacheRow="true"
+            showSelectBox="true" 
+            allowCellEdit="true"
+            url="grid.json">
+            <div field="name" locked="true" editor="{type: 'textbox', 'required': true}">姓名</div>
+            <div field="sex">性别</div>
+            <div field="status" width="150" editor="{'type': 'combobox', 'data': data}">状态</div>
+            <div field="code" width="150" editor="{'type': 'popupedit', 'url': data}">身份证号</div>
+            <div field="phone" width="150">手机号</div>
+            <div field="birthday" width="150">生日</div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        boot.parse();
+    </script>
+</html>

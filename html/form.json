@@ -1,0 +1,15 @@
+{
+	"message": "",
+	"success": true,
+	"resultData": {
+	    "name" : "xltian010110",
+	    "password" : "010110",
+	    "sex" : 1,
+	    "age" : 12345.66789,
+	    "test" : 0.12,
+	    "birthday": "1988-06-17T23:23:23",
+	    "nationality" : "cn",
+	    "department" : "BI商业智能",
+	    "remark" : "I love BI商业智能!"
+	}
+}
